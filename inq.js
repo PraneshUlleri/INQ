@@ -8,18 +8,13 @@ var db = mongojs('mongodb://pi:abc123321@cluster0-shard-00-00-ccqn3.mongodb.net:
 var app = express()
 app.use(express.static('frontend'))
 app.get('/home',function (req, res) {
-	res.send("HI ! WELCOME to PI's World")
-		
-
-		
+	res.send("HI ! WELCOME to PI's World")		
 })
 
-// app.get('/home/:name',function (req, res) {
-// 	res.send("HI "+req.params.name+"! WELCOME to PI's World")
-// 	a.readFile('textfile.txt',function(a,b){
-// 			res.send(b.toString())
-// 		})
-// })
+app.get('/',function (req, res) {
+	
+res.sendFile(__dirname+"/inq.html")
+})
 
 app.get('/search/:name',function (req, res) {
 	//res.send("We searched your name in the database")
@@ -34,27 +29,7 @@ app.get('/search/:name',function (req, res) {
 				res.send("Ah' I dont remember you here")
 			}
 		})
-
-
-	// a.readFile('textfile.txt',function(a,b){
-	// 		res.send(b.toString())
-	// 	})
 })
-// app.get('/enter/:name',function (req, res) {
-// 	res.send("We will enter your name in the database")
-// 			var dataname = { Username:req.params.name}
-// 		db.Pi.insert(dataname, function(err,data ){
-// 		if (err){
-// 		console.log(err)}
-// 		else{
-// 		console.log(dataname +" is inserted" )
-// 		}
-// 		})
-
-// 	// a.readFile('textfile.txt',function(a,b){
-// 	// 		res.send(b.toString())
-// 	// 	})
-// })
 
 
 app.get('/login',function (req, res) {
@@ -115,12 +90,7 @@ app.get('/signupsubmit',function (req, res) {
 		}
 		})
 			}
-		})
-		
-		
-
-	
-		
+		})		
 })
 
 
