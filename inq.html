@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Doctor B</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="inqcss.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
@@ -27,12 +28,21 @@ height: 550px;
 border-radius: 5%;">
 <img src="https://cdn.wccftech.com/wp-content/uploads/2017/03/Google-Maps.jpg" style="width:100%;margin-top: 5% ">
 <h3 style="margin:12%">Enter your Location here to find out the best doctors and hospitals nearby</h3>
-<form action="/maps" method="GET" style="margin-top: 14%; margin-left: 15%">
-	<input type="text" placeholder="location" name="loc" >
-	<button type="button" >Go</button>
+<!-- <form  method="GET" style="margin-top: 14%; margin-left: 15%">
+ -->	<!-- <input type="text" placeholder="location" name="loc">
+ -->
+<form action="https://www.google.com/search" method="GET">
+	<input type="text" name="q" placeholder="doctor in <location>">
+	<input type="submit" name="go">
 </form>
 
-//onclick="parent.location='https://www.google.com/search?q=doctors+in+'+loc+'&oq=doctors+in+'+loc"
+
+	<!-- <button type="submit" onclick="location='https://www.google.com/search?q=doctors+in+'+(document.getElementById('loc').value)" >go</button>
+	 --><!-- <button type="button" onclick="location='https://www.google.com/search?q=doctors+in+'+f2()+'&oq=doctors+in+'+f2()">Go</button> -->
+</form>
+<!-- 
+//onclick="parent.location='https://www.google.com/search?q=doctors+in+'+loc+'&oq=doctors+in+'+loc" -->
+  
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-3 " style="background-color: #ffffff;

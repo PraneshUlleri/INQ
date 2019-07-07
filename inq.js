@@ -35,10 +35,11 @@ app.get('/login',function (req, res) {
 		res.sendFile(__dirname+"/frontend/project1.html")
 })
 
-app.get('/maps',function (req, res) {
-			var location=req.query.loc,
-			("https://www.google.com/search?q=doctors+in+kerala&oq=doctors+in+kerala");
-})
+// app.get('/maps',function (req, res) {
+
+// 	 var box=document.getElementById(req.params.loc);
+// window.location='http://www.google.com/search?q='+(box.value);	
+// })
 
 app.get('/loginsubmit',function (req, res) {
 		var logcheck={ 
@@ -99,6 +100,6 @@ app.get('/signupsubmit',function (req, res) {
 
 
 
-app.listen(8001, function(){
+app.listen(8123, function(){
 console.log("here")
 })
