@@ -11,8 +11,7 @@ app.get('/home',function (req, res) {
 	res.send("HI ! WELCOME to PI's World")		
 })
 
-app.get('/',function (req, res) {
-	
+app.get('/',function (req, res) {	
 res.sendFile(__dirname+"/inq.html")
 })
 
@@ -34,6 +33,11 @@ app.get('/search/:name',function (req, res) {
 
 app.get('/login',function (req, res) {
 		res.sendFile(__dirname+"/frontend/project1.html")
+})
+
+app.get('/maps',function (req, res) {
+			var location=req.query.loc,
+			("https://www.google.com/search?q=doctors+in+kerala&oq=doctors+in+kerala");
 })
 
 app.get('/loginsubmit',function (req, res) {
@@ -58,7 +62,7 @@ app.get('/loginsubmit',function (req, res) {
 				res.send("no user Found!")
 				
 			}
-		})
+		})	
 
 
 })
