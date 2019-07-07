@@ -35,11 +35,6 @@ app.get('/login',function (req, res) {
 		res.sendFile(__dirname+"/frontend/project1.html")
 })
 
-// app.get('/maps',function (req, res) {
-
-// 	 var box=document.getElementById(req.params.loc);
-// window.location='http://www.google.com/search?q='+(box.value);	
-// })
 
 app.get('/loginsubmit',function (req, res) {
 		var logcheck={ 
@@ -51,10 +46,9 @@ app.get('/loginsubmit',function (req, res) {
 
 		db.Pi.find(logcheck, function(err, data) {
 			if (data.length>0){
-				app.set('view engine','ejs');
-					db.Pi.find({},function(err,dat){
+				db.Pi.find(all,function(err,data){
 
-				res.render('dash',{ab:data,use:dat })
+				res.sendFile(__dirname+"/inqsin.html")
 
 					})
 			
@@ -86,8 +80,9 @@ app.get('/signupsubmit',function (req, res) {
 				res.send("Already Signed up using this email ")
 			}
 			else{
-				res.send("SignedIn!")
+				//res.send("SignedIn!")
 				db.Pi.insert(details, function(err,data ){
+				res.sendFile(__dirname+"/inqsin.html")
 		if (err){
 		console.log(err)}
 		else{
